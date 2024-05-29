@@ -1,0 +1,263 @@
+:root {
+  --background: #1a1a2e; /* Fondo */
+  --text-primary: #e8e1fb; /* Texto Principal */
+  --text-secondary: #b8b8d4; /* Texto Secundario */
+  --primary: #b8b8b8; /* Botón Primario */
+  --primary-text: #05020e; /* Texto de Botón Primario */
+  --secondary: #66305ce5; /* Botón Secundario */
+  --secondary-text: #ffffff; /* Texto de Botón Secundario */
+  --accent: #e5238b; /* Acento */
+}
+
+/*ESTILOS GENERALES*/
+
+body {
+  background: var(--background);
+  font-family: sans-serif, Arial, Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.layout {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "content content content lateral"
+    "footer footer footer footer";
+  grid-template-rows: 100px 70px auto 70px;
+}
+
+/*ESTILOS CABECERA*/
+
+.header {
+  grid-area: header;
+  color: var(--text-primary);
+  background: var(--background);
+  text-align: left;
+  font-style: italic;
+
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 40px;
+  height: 40px;
+  border-radius: 300px;
+  margin-top: 30px;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  margin-top: 15px;
+  margin-left: 16px;
+  border-left: 12px solid rgb(255, 255, 255);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.header h1 {
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+/*ESTILOS DE LA BARRA DE NAVEGACIÓN*/
+
+.nav {
+  grid-area: nav;
+  background: linear-gradient(90deg, var(--secondary), var(--primary-text));
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav li {
+  padding: 10px;
+}
+
+.nav a {
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.nav a:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
+
+.content {
+  grid-area: content;
+  background: var(--background);
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.peli-item {
+  flex-grow: 1;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0.089),
+      rgba(0, 0, 0, 0.897)
+    ),
+    url("https://i.iinfo.cz/images/135/prima-play-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 15px 15px 5px #dddddd0c;
+  margin: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+
+.title,
+.description {
+  color: var(--text-primary);
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  width: 100px;
+  background: var(--primary);
+  color: var(--primary-text);
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 100px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.delete{
+    background: var(--secondary);
+    color: var(--secondary-text);
+    margin-left: 20px;
+}
+
+.peli-item .edit:hover {
+  background: rgb(219, 219, 219);
+  transform: scale(1.2);
+}
+
+.peli-item .delete:hover {
+  background: rgba(94, 49, 131, 0.445);
+  transform: scale(1.2 );
+}
+
+/*ESTILOS BARRA LATERAL*/
+
+.lateral {
+  grid-area: lateral;
+  background: var(--background);
+  border-left: 1px solid #ffffff17;
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+}
+
+.lateral > div {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  background: var(--background);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #dddddd1c;
+  overflow: hidden;
+}
+
+.lateral input[type="text"],
+.lateral input[type="text"],
+.lateral textarea,
+.edit_form input[type="text"],
+.edit_form input[type="text"],
+.edit_form textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  max-width: 200px;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+.edit_form {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.no-encontrado{
+  color: red;
+}
+
+.textarea{
+  max-width: 170px;
+  min-width: 170px;
+  max-height: 80px;
+  min-height: 80px;
+}
+
+/*ESTILOS PARA EL PIE DE PÁGINA*/
+.footer {
+  grid-area: footer;
+  background: var(--background);
+  color: var(--accent);
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  text-align: center;
+  line-height: 68px;
+  padding-left: 25px;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 1085px) {
+  .content {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .peli-item {
+    width: 80%;
+  }
+}
